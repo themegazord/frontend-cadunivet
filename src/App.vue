@@ -77,5 +77,45 @@ body {
   z-index: 2;
 }
 
+.info-agenda-consulta-homepage {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-info-agenda-consulta-homepage {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 50px;
+  color: #FFFFFF;
+  width: 450px;
+}
+
+.description-info-agenda-consulta-homepage {
+  margin-top: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 44px;
+  color: #FFFFFF;
+  width: 430px;
+}
+
+.btn-info-agenda-consulta-homepage{
+  width: 230px;
+  height: 60px;
+  background-color: #6ADBD9;
+  border: 5px solid #FFFFFF;
+  border-radius: 100px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 31px;
+
+  color: #FFFFFF;
+}
+
 
 </style>
