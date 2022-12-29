@@ -27,16 +27,57 @@
       </div>
       <img class="enferemeira-sobre-nos-homepage" src="@/assets/enfermeira.png" alt="Imagem de uma pessoa da área da saude animal segurando um gato rajado">
     </div>
+    <div id="depoimentos">
+      <h2 class="title-depoimentos">Depoimentos</h2>
+      <hr>
+      <div id="card-depoimento-container">
+        <cardDepoimento :depoimentos="d" v-for="(d, index) in depoimentos" :key="index"/>
+      </div>
+      <hr>
+    </div>
+    <a href="#" id="link-topo">&#9650;</a>
   </div>
 </template>
 <script>
 
 import navBar from "@/components/Navbar";
+import cardDepoimento from "@/components/CardDepoimento";
 
 export default {
     name: "App",
     components: {
         navBar,
+        cardDepoimento,
+    },
+    data() {
+        return {
+            depoimentos: [
+                {
+                    "nome": "Stella Gabriely",
+                    "uf": "MS",
+                    "ocupacao": "Médica Veterinária",
+                    "foto": "stella-gabrielly.png"
+                },
+                {
+                    "nome": "Gael Cláudio",
+                    "uf": "SP",
+                    "ocupacao": "Diretor HUV - Unicamp",
+                    "foto": "gael-claudio.png"
+                },
+                {
+                    "nome": "Joana Agatha",
+                    "uf": "MG",
+                    "ocupacao": "Cliente CadUni Vet.",
+                    "foto": "joana-agatha.png"
+                },
+                {
+                    "nome": "Guilherme Daniel",
+                    "uf": "RJ",
+                    "ocupacao": "Dono da Rio Petshop",
+                    "foto": "guilherme-daniel.png"
+                },
+            ]
+        };
     }
 };
 </script>
@@ -47,6 +88,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Baloo 2', sans-serif;
+  overflow-x: hidden;
 }
 #app {
   width: 100vw;
@@ -157,5 +199,50 @@ body {
   font-size: 18px;
   line-height: 24px;
   color: #FFFFFF;
+}
+
+#depoimentos {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60vh;
+  background-color: #6ADBD9;
+}
+
+.title-depoimentos {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  color: #FFFFFF;
+  margin: 10px auto;
+}
+
+#depoimentos hr {
+  width: 80%;
+  height: 5px;
+  background-color: #FFFFFF;
+  border: none;
+}
+
+#card-depoimento-container {
+  width:100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#link-topo{
+  text-decoration: none;
+  color: #09BBB5;
+  background: #FFFFFF;
+  padding: 10px;
+  border-radius: 10px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  box-shadow: 3px 3px 10px #999999;
 }
 </style>

@@ -3,10 +3,9 @@
    <img src="../assets/logo_cadunivet.png" alt="Logo da CadUni Veterinárias" id="logo">
     <ul class="navbar-links"> 
         <!-- TODO passar os links por props -->
-        <li class="link"><a href="agenda-consulta-homepage">Agende sua consulta</a></li>
+        <li class="link"><a href="#agenda-consulta-homepage">Agende sua consulta</a></li>
         <li class="link"><a href="#sobre-nos-homepage">Sobre nós</a></li>
-        <li class="link"><a>Depoimentos</a></li>
-        <li class="link"><a>Contato</a></li>
+        <li class="link"><a href="#depoimentos">Depoimentos</a></li>
         <li class="link">
             <span class="btn-login">Login <img class="dog-login" src="@/assets/cao.png" alt="Cachorrinho do Login"></span>
         </li>
