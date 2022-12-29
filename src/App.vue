@@ -15,6 +15,18 @@
         <button type="button" class="btn-info-agenda-consulta-homepage">Cadastre-se</button>
       </div>
     </div>
+    <div id="sobre-nos-homepage">
+      <div class="info-sobre-nos-homepage">
+        <h2 class="title-info-sobre-nos-homepage">Sobre nós</h2>
+        <p class="description-info-sobre-nos-homepage">
+          Somos uma ONG com mais de 6 anos de atuação, com o objetivo de democratizar e simplificar o cuidado com o pet, oferecendo a melhor experiência para tutores e autonomia em atendimentos  médico-veterinários.<br><br>
+          Somos apaixonados por pets, e sabemos que cada laço é único! <br><br>
+          Por isso oferecemos aos nossos clientes experiência de compra e atendimento diferenciado em todo o segmento animal, reunindo todos os dados seu bichinho em um só lugar, com proteção e facilidade.<br><br>
+          Trabalhamos para que a relação entre pets e suas familias seja melhor a cada dia. Nosso site é preparado e organizado para que você encontrar facilmente o prontuário do seu pet a qualquer hora e no lugar que preferir.<br><br>
+        </p>
+      </div>
+      <img class="enferemeira-sobre-nos-homepage" src="@/assets/enfermeira.png" alt="Imagem de uma pessoa da área da saude animal segurando um gato rajado">
+    </div>
   </div>
 </template>
 <script>
@@ -113,9 +125,37 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 31px;
-
   color: #FFFFFF;
 }
 
+#sobre-nos-homepage {
+  background-color: #9AECEA;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
 
+.info-sobre-nos-homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 50px;
+  color: #FFFFFF;
+}
+
+.description-info-sobre-nos-homepage {
+  width: 450px;
+  height: calc(100vh - 100px);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
 </style>
