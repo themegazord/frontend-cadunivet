@@ -30,6 +30,7 @@ export default {
     methods: {
         closeModal() {
             this.$emit("closeModal", false);
+            this.$store.state.modalLoginShow = false;
         }
     }
 };

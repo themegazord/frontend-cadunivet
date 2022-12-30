@@ -1,5 +1,5 @@
 <template>
-    <div id="homepage">
+    <div id="homepage" :class="{'loginShow': loginShow}">
       <navBar />
       <div id="agenda-consulta-homepage">
         <div class="pets-agenda-consulta-homepage">
@@ -78,11 +78,17 @@ export default {
                 },
             ]
         };
+    },
+    computed:{
+        loginShow(){
+            return this.$store.state.modalLoginShow;
+        }
     }
 };
 </script>
   
   <style>
+
   #homepage {
     width: 100%;
   }
@@ -250,5 +256,9 @@ export default {
     right: 10px;
     bottom: 10px;
     box-shadow: 3px 3px 10px #999999;
+  }
+
+  .loginShow {
+    position: fixed;
   }
   </style>

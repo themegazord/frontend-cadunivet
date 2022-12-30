@@ -13,7 +13,7 @@
       <li class="link"><a href="#sobre-nos-homepage">Sobre nós</a></li>
       <li class="link"><a href="#depoimentos">Depoimentos</a></li>
       <li class="link">
-        <button class="btn-login" @click="showModal = true"
+        <button class="btn-login" @click="openModal"
           >Login
           <img
             class="dog-login"
@@ -40,6 +40,10 @@ export default {
         closeModal(value){
             this.showModal = value;
             console.log("recebi o evento", value);
+        },
+        openModal() {
+            this.showModal = true;
+            this.$store.state.modalLoginShow = true;
         }
     }
 };
@@ -65,7 +69,7 @@ export default {
   border-radius: 30px;
   width: 30%;
   height: 70vh;
-  box-shadow: 0 0 1em rgb(0 0 0 /0.3);
+  box-shadow: 0px 0px 100px 100px rgba(0,0,0,0.21);
   display: block;
   position: fixed;
   flex-direction: column;
