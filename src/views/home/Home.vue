@@ -31,11 +31,11 @@
         <h2 class="title-depoimentos">Depoimentos</h2>
         <hr>
         <div id="card-depoimento-container">
-          <cardDepoimento :depoimentos="d" v-for="(d, index) in depoimentos" :key="index"/>
+          <cardDepoimento class="card-depoimento" :depoimentos="d" v-for="(d, index) in depoimentos" :key="index"/>
         </div>
         <hr>
       </div>
-      <a href="#nav" id="link-topo">&#9650;</a>
+      <a href="#" id="link-topo">&#9650;</a>
     </div>
   </template>
 <script>
@@ -128,6 +128,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 20px;
   }
   
   .title-info-agenda-consulta-homepage {
@@ -140,7 +141,7 @@ export default {
   }
   
   .description-info-agenda-consulta-homepage {
-    margin-top: 0;
+    margin-top: 0px;
     font-style: normal;
     font-weight: 400;
     font-size: 28px;
@@ -182,7 +183,7 @@ export default {
   .info-sobre-nos-homepage {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     font-style: normal;
     font-weight: 400;
@@ -193,6 +194,7 @@ export default {
   
   .description-info-sobre-nos-homepage {
     width: 450px;
+    padding: 30px;
     height: calc(100vh - 100px);
     font-style: normal;
     font-weight: 400;
@@ -232,6 +234,10 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+  }
+
+  .card-depoimento {
+    margin: 10px 0;
   }
   
   #link-topo{

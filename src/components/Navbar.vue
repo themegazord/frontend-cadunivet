@@ -13,28 +13,34 @@
       <li class="link"><a href="#sobre-nos-homepage">Sobre nós</a></li>
       <li class="link"><a href="#depoimentos">Depoimentos</a></li>
       <li class="link">
-        <button class="btn-login"
+        <button class="btn-login" @click="showModal = true"
           >Login
           <img
             class="dog-login"
             src="@/assets/cao.png"
             alt="Cachorrinho do Login"
         /></button>
+        <ModalLogin v-if="showModal" open id="modal" @closeModal="closeModal"/>
       </li>
     </ul>
   </nav>
 </template>
 
 <script>
+import ModalLogin from "./ModalLogin.vue";
 export default {
+    components: {ModalLogin},
     name: "nav-bar",
     data() {
         return {
-            
+            showModal: false,
         };
     },
     methods: {
-
+        closeModal(value){
+            this.showModal = value;
+            console.log("recebi o evento", value);
+        }
     }
 };
 </script>
@@ -52,6 +58,23 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
+
+/* Modal inicio */
+#modal {
+  border: none;
+  border-radius: 30px;
+  width: 30%;
+  height: 70vh;
+  box-shadow: 0 0 1em rgb(0 0 0 /0.3);
+  display: block;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  margin: 0 auto;
+}
+
+/* Modal Fim */
 
 #logo {
   width: 158px;
