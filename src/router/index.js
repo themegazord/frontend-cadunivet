@@ -27,7 +27,8 @@ const routes = [
         path: "/cadastro/empresa",
         name: "cadastro-empresa",
         component: cadastroEmpresa
-    }
+    },
+    
 ];
 
 const router = new VueRouter({

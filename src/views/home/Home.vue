@@ -35,7 +35,7 @@
         </div>
         <hr>
       </div>
-      <a href="#" id="link-topo">&#9650;</a>
+      <a href="#nav" id="link-topo">&#9650;</a>
     </div>
   </template>
 <script>

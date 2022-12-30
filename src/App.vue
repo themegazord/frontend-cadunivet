@@ -17,8 +17,4 @@ export default {
     font-family: 'Baloo 2', sans-serif;
     overflow-x: hidden;
   }
-  #app {
-    width: 100vw;
-    height: 100vh;
-  }
 </style>
