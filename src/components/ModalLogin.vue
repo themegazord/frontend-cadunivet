@@ -8,10 +8,10 @@
             <span class="title-modaLogin">Olha, você voltou 🐶</span>
             <span class="subtitle-modalLogin">Vamos entrar no sistema?</span>
         </div>
-        <div class="body-container-modalLogin">
-          <v-text-field v-model="email" label="Insira seu email" class="inputEmailLogin" required></v-text-field>
-          <v-text-field v-model="password" label="Insira sua senha" class="inputPasswordLogin" required></v-text-field>
-        </div>
+        <v-form class="body-container-modalLogin">
+          <InputText v-model="email" titulo="Insira seu email" class="inputEmailLogin" required="true" :regras="errorEmail"/>
+          <InputText v-model="password" titulo="Insira sua senha" class="inputPasswordLogin" required="true" :regras="['required']"/>
+        </v-form>
         <div class="footer-modalLogin">
             <span class="signup">Você ainda não tem uma conta? <a id="signup">Cadastre-se</a></span>
             <button type="button" class="btn-modalLogin">Login</button>
@@ -20,11 +20,19 @@
   </dialog>
 </template>
 <script>
+import InputText from "./InputText.vue";
 export default {
+    components: {
+        InputText,
+    },
     data() {
         return {
             email: "",
             password: "",
+            errorEmail: [
+                "O campo de email é obrigatório",
+                "O valor inserido não é um email válido"
+            ]
         };
     },
     methods: {
@@ -32,7 +40,10 @@ export default {
             this.$emit("closeModal", false);
             this.$store.state.modalLoginShow = false;
         }
-    }
+    },
+    mounted() {
+        console.log(this.$refs);
+    },
 };
 </script>
 
