@@ -39,6 +39,7 @@ export default {
     methods: {
         closeModal(value){
             this.showModal = value;
+            console.log("recebi o evento", value);
         },
         openModal() {
             this.showModal = true;

@@ -1,7 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import cadastroClientes from "@/views/cadastro-clientes/CadastroClientes.vue";
+import cadastroUsuarios from "@/views/cadastro-usuarios/CadastroUsuarios.vue";
 import cadastroEmpresa from "@/views/cadastro-empresa/CadastroEmpresa.vue";
+import cadastro from "@/views/cadastro/Cadastro.vue";
 import homePage from "@/views/home/Home.vue";
 
 Vue.use(VueRouter);
@@ -13,9 +14,14 @@ const routes = [
         component: homePage
     },
     {
-        path: "/cadastro/clientes",
-        name: "cadastro-clientes",
-        component: cadastroClientes,
+        path: "/cadastro",
+        name: "cadastro-geral",
+        component: cadastro
+    },
+    {
+        path: "/cadastro/usuarios",
+        name: "cadastro-usuarios",
+        component: cadastroUsuarios,
     },
     {
         path: "/cadastro/empresa",

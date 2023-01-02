@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1>Tela de cadastro de usuários</h1>
+    <h1>Tela de cadastro</h1>
   </div>
 </template>
 
 <script>
 export default {
-    name: "cadastro-clientes",
+    name: "cadastro-geral"
 };
 </script>
 

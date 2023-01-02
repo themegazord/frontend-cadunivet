@@ -1,5 +1,5 @@
 <template>
-  <dialog :class="{'escolhaCadastroShow': escolhaCadastroShow}">
+  <dialog>
     <div id="top-modalLogin">
         <v-icon color="#6ADBD9" @click="closeModal">mdi-close-thick</v-icon>
     </div>
@@ -13,7 +13,7 @@
           <v-text-field v-model="password" label="Insira sua senha" class="inputPasswordLogin" required></v-text-field>
         </div>
         <div class="footer-modalLogin">
-            <span class="signup">Você ainda não tem uma conta? <a id="signup" @click="openModalEscolhaCadastro">Cadastre-se</a></span>
+            <span class="signup">Você ainda não tem uma conta? <a id="signup">Cadastre-se</a></span>
             <button type="button" class="btn-modalLogin">Login</button>
         </div>
     </div>
@@ -25,15 +25,14 @@ export default {
         return {
             email: "",
             password: "",
-            showModal: false,
         };
     },
     methods: {
         closeModal() {
             this.$emit("closeModal", false);
             this.$store.state.modalLoginShow = false;
-        },
-    },
+        }
+    }
 };
 </script>
 
