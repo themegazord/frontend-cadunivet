@@ -20,7 +20,7 @@
             src="@/assets/cao.png"
             alt="Cachorrinho do Login"
         /></button>
-        <ModalLogin v-if="showModal" open id="modal" @closeModal="closeModal"/>
+        <ModalLogin v-if="showModal" open id="modal" @closeModal="closeModal"/> <!--a-->
       </li>
     </ul>
   </nav>
