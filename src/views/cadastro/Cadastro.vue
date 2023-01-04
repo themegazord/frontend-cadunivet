@@ -155,9 +155,10 @@ export default {
 
 <style>
 #container_cadastro {
-  width: 100%;
+  width: 100vw;
   height: 200vh;
   background-image: url("../../assets/background_cadastro.png");
+  background-size: 100vw;
   background-repeat: repeat-y;
   display: flex;
   flex-direction: column;

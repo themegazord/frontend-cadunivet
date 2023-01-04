@@ -4,14 +4,15 @@
       src="../assets/logo_cadunivet.png"
       alt="Logo da CadUni Veterinárias"
       id="logo"
+      @click="redirecionaHome"
     />
     <ul class="navbar-links">
       <!-- TODO passar os links por props -->
       <li class="link">
-        <a href="#agenda-consulta-homepage">Agende sua consulta</a>
+        <a href="#agenda-consulta-homepage" v-if="agenda">Agende sua consulta</a>
       </li>
-      <li class="link"><a href="#sobre-nos-homepage">Sobre nós</a></li>
-      <li class="link"><a href="#depoimentos">Depoimentos</a></li>
+      <li class="link"><a href="#sobre-nos-homepage" v-if="sobrenos">Sobre nós</a></li>
+      <li class="link"><a href="#depoimentos" v-if="depoimentos">Depoimentos</a></li>
       <li class="link">
         <button class="btn-login" @click="openModal"
           >Login
@@ -20,7 +21,7 @@
             src="@/assets/cao.png"
             alt="Cachorrinho do Login"
         /></button>
-        <ModalLogin v-if="showModal" open id="modal" @closeModal="closeModal"/> <!--a-->
+        <ModalLogin v-if="showModal" open id="modal" @closeModal="closeModal"/>
       </li>
     </ul>
   </nav>
@@ -29,6 +30,7 @@
 <script>
 import ModalLogin from "./ModalLogin.vue";
 export default {
+    props: ["agenda", "sobrenos", "depoimentos"],
     components: {ModalLogin},
     name: "nav-bar",
     data() {
@@ -44,6 +46,9 @@ export default {
         openModal() {
             this.showModal = true;
             this.$store.state.modalLoginShow = true;
+        },
+        redirecionaHome() {
+            this.$router.push("/");
         }
     }
 };

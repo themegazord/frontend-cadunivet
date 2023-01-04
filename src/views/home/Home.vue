@@ -1,6 +1,6 @@
 <template>
     <div id="homepage" :class="{'loginShow': loginShow}">
-      <navBar />
+      <navBar agenda="true" sobrenos="true" depoimentos="true"/>
       <div id="agenda-consulta-homepage">
         <div class="pets-agenda-consulta-homepage">
           <img class="dog-golden" src="@/assets/golden.png" alt="Imagem de um cachorro da raça Golden Retriever">
