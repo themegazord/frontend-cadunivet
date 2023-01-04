@@ -33,7 +33,7 @@
         ></v-text-field>
         <div class="footer-modalLogin">
           <span class="signup"
-            >Você ainda não tem uma conta? <a id="signup">Cadastre-se</a></span
+            >Você ainda não tem uma conta? <router-link to="/cadastro" tag="a" id="signup">Cadastre-se</router-link></span
           >
           <button type="submit" class="btn-modalLogin">Login</button>
         </div>
