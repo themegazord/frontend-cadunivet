@@ -4,15 +4,15 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-    state: {
-        modalLoginShow: false,
-    },
-    getters: {
-    },
-    mutations: {
-    },
-    actions: {
-    },
-    modules: {
-    }
+  state: {
+    modalLoginShow: false,
+  },
+  getters: {
+  },
+  mutations: {
+  },
+  actions: {
+  },
+  modules: {
+  }
 });

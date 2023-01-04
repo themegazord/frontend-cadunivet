@@ -8,8 +8,8 @@
 
 <script>
 export default {
-    name: "card-depoimento",
-    props: ["depoimentos"]
+  name: "card-depoimento",
+  props: ["depoimentos"]
 };
 </script>
 

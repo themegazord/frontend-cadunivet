@@ -17,7 +17,7 @@
             required
             @blur="$v.email.$touch()"
             :error="!!emailErrors.length"
-            :style="{ color: !!passwordErrors.length ? 'red' : 'initial' }"
+            :style="{ color: !!emailErrors.length ? 'red' : 'initial' }"
             >
         </v-text-field>
         <v-text-field
@@ -29,7 +29,9 @@
             @blur="$v.password.$touch()"
             :error="!!passwordErrors.length"
             :style="{ color: !!passwordErrors.length ? 'red' : 'initial' }"
-            type="password"
+            :append-icon="mostraSenha ? 'mdi-eye' : 'mdi-eye-off'"
+            :type="mostraSenha ? 'text' : 'password'"
+            @click:append="mostraSenha = !mostraSenha"
         ></v-text-field>
         <div class="footer-modalLogin">
           <span class="signup"
@@ -45,55 +47,56 @@
 import { required, email } from "vuelidate/lib/validators";
 import { validationMixin } from "vuelidate";
 export default {
-    data() {
-        return {
-            email: "",
-            password: "",
-        };
+  data() {
+    return {
+      email: "",
+      password: "",
+      mostraSenha: false
+    };
+  },
+  methods: {
+    closeModal() {
+      this.$emit("closeModal", false);
+      this.$store.state.modalLoginShow = false;
     },
-    methods: {
-        closeModal() {
-            this.$emit("closeModal", false);
-            this.$store.state.modalLoginShow = false;
-        },
-        submit() {
-            this.$v.$touch();
-            if(this.$v.$invalid) {
-                console.log("formulario com pendencias");
-            }else{
-                console.log("logado com sucesso");
-            }
-        },
+    submit() {
+      this.$v.$touch();
+      if(this.$v.$invalid) {
+        console.log("formulario com pendencias");
+      }else{
+        console.log("logado com sucesso");
+      }
     },
-    mixins: [validationMixin],
-    validations: {
-        email: {
-            required,
-            email,
-        },
-        password: {
-            required,
-        },
+  },
+  mixins: [validationMixin],
+  validations: {
+    email: {
+      required,
+      email,
     },
-    computed: {
-        emailErrors(){
-            const errors = [];
+    password: {
+      required,
+    },
+  },
+  computed: {
+    emailErrors(){
+      const errors = [];
 
-            if(!this.$v.email.$dirty) return errors;
-            !this.$v.email.email && errors.push("Insira um email válido");
-            !this.$v.email.required && errors.push("Insira seu email");
+      if(!this.$v.email.$dirty) return errors;
+      !this.$v.email.email && errors.push("Insira um email válido");
+      !this.$v.email.required && errors.push("Insira seu email");
 
-            return errors;
-        },
-        passwordErrors() {
-            const errors = [];
+      return errors;
+    },
+    passwordErrors() {
+      const errors = [];
 
-            if(!this.$v.password.$dirty) return errors;
-            !this.$v.password.required && errors.push("Insira sua senha");
+      if(!this.$v.password.$dirty) return errors;
+      !this.$v.password.required && errors.push("Insira sua senha");
             
-            return errors;
-        }
+      return errors;
     }
+  }
 };
 </script>
 

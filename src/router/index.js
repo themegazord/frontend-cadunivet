@@ -6,22 +6,22 @@ import homePage from "@/views/home/Home.vue";
 Vue.use(VueRouter);
 
 const routes = [
-    {
-        path: "/",
-        name: "home",
-        component: homePage
-    },
-    {
-        path: "/cadastro",
-        name: "cadastro-geral",
-        component: cadastro
-    },
+  {
+    path: "/",
+    name: "home",
+    component: homePage
+  },
+  {
+    path: "/cadastro",
+    name: "cadastro-geral",
+    component: cadastro
+  },
     
     
 ];
 
 const router = new VueRouter({
-    routes
+  routes
 });
 
 export default router;

@@ -7,7 +7,6 @@
       @click="redirecionaHome"
     />
     <ul class="navbar-links">
-      <!-- TODO passar os links por props -->
       <li class="link">
         <a href="#agenda-consulta-homepage" v-if="agenda">Agende sua consulta</a>
       </li>
@@ -30,27 +29,27 @@
 <script>
 import ModalLogin from "./ModalLogin.vue";
 export default {
-    props: ["agenda", "sobrenos", "depoimentos"],
-    components: {ModalLogin},
-    name: "nav-bar",
-    data() {
-        return {
-            showModal: false,
-        };
+  props: ["agenda", "sobrenos", "depoimentos"],
+  components: {ModalLogin},
+  name: "nav-bar",
+  data() {
+    return {
+      showModal: false,
+    };
+  },
+  methods: {
+    closeModal(value){
+      this.showModal = value;
+      console.log("recebi o evento", value);
     },
-    methods: {
-        closeModal(value){
-            this.showModal = value;
-            console.log("recebi o evento", value);
-        },
-        openModal() {
-            this.showModal = true;
-            this.$store.state.modalLoginShow = true;
-        },
-        redirecionaHome() {
-            this.$router.push("/");
-        }
+    openModal() {
+      this.showModal = true;
+      this.$store.state.modalLoginShow = true;
+    },
+    redirecionaHome() {
+      this.$router.push("/");
     }
+  }
 };
 </script>
 

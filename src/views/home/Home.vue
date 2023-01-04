@@ -44,46 +44,46 @@ import navBar from "@/components/Navbar";
 import cardDepoimento from "@/components/CardDepoimento";
   
 export default {
-    name: "home-page",
-    components: {
-        navBar,
-        cardDepoimento,
-    },
-    data() {
-        return {
-            depoimentos: [
-                {
-                    "nome": "Stella Gabriely",
-                    "uf": "MS",
-                    "ocupacao": "Médica Veterinária",
-                    "foto": "stella-gabrielly.png"
-                },
-                {
-                    "nome": "Gael Cláudio",
-                    "uf": "SP",
-                    "ocupacao": "Diretor HUV - Unicamp",
-                    "foto": "gael-claudio.png"
-                },
-                {
-                    "nome": "Joana Agatha",
-                    "uf": "MG",
-                    "ocupacao": "Cliente CadUni Vet.",
-                    "foto": "joana-agatha.png"
-                },
-                {
-                    "nome": "Guilherme Daniel",
-                    "uf": "RJ",
-                    "ocupacao": "Dono da Rio Petshop",
-                    "foto": "guilherme-daniel.png"
-                },
-            ]
-        };
-    },
-    computed:{
-        loginShow(){
-            return this.$store.state.modalLoginShow;
-        }
+  name: "home-page",
+  components: {
+    navBar,
+    cardDepoimento,
+  },
+  data() {
+    return {
+      depoimentos: [
+        {
+          "nome": "Stella Gabriely",
+          "uf": "MS",
+          "ocupacao": "Médica Veterinária",
+          "foto": "stella-gabrielly.png"
+        },
+        {
+          "nome": "Gael Cláudio",
+          "uf": "SP",
+          "ocupacao": "Diretor HUV - Unicamp",
+          "foto": "gael-claudio.png"
+        },
+        {
+          "nome": "Joana Agatha",
+          "uf": "MG",
+          "ocupacao": "Cliente CadUni Vet.",
+          "foto": "joana-agatha.png"
+        },
+        {
+          "nome": "Guilherme Daniel",
+          "uf": "RJ",
+          "ocupacao": "Dono da Rio Petshop",
+          "foto": "guilherme-daniel.png"
+        },
+      ]
+    };
+  },
+  computed:{
+    loginShow(){
+      return this.$store.state.modalLoginShow;
     }
+  }
 };
 </script>
   
